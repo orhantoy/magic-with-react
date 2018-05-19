@@ -23,8 +23,12 @@ class Card extends Component {
           </div>
 
         <div className="choices">
-          <button onClick={this.props.onClickNumberPresent} className="choice yes">👍 My number is there</button>
-          <button onClick={this.props.onClickNumberAbsent} className="choice no">My number is not there 👎</button>
+          <button onClick={this.props.onClickNumberPresent} className="choice yes">
+            <span role="img" aria-label="Thumbs up">👍</span> My number is there
+          </button>
+          <button onClick={this.props.onClickNumberAbsent} className="choice no">
+            My number is not there <span role="img" aria-label="Thumbs down">👎</span>
+          </button>
         </div>
 
         <p className="reset">
