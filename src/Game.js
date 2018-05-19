@@ -16,7 +16,15 @@ class Game extends Component {
   }
 
   triggerStart() {
-    this.setState({ stage: "game", currentCard: 0, cardAnswers: {} });
+    var nextCurrentCard;
+
+    if (this.props.randomCardOrder === true) {
+      nextCurrentCard = Math.floor(Math.random() * this.props.n);
+    } else {
+      nextCurrentCard = 0;
+    }
+
+    this.setState({ stage: "game", currentCard: nextCurrentCard, cardAnswers: {} });
   }
 
   triggerReset() {
