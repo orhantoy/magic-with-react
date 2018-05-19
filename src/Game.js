@@ -5,7 +5,7 @@ import Card from './Card';
 import numbersTableForCard from './numbers';
 import './Game.css';
 
-class App extends Component {
+class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -67,4 +67,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Game;
