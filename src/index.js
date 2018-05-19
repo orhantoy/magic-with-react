@@ -4,5 +4,5 @@ import './index.css';
 import Game from './Game';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Game n={6} />, document.getElementById('root'));
+ReactDOM.render(<Game n={6} randomCardOrder={true} />, document.getElementById('root'));
 registerServiceWorker();

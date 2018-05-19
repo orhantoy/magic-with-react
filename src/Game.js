@@ -11,25 +11,37 @@ class Game extends Component {
     this.state = {
       stage: "intro",
       currentCard: null,
-      cardAnswers: new Array(this.props.n),
+      cardAnswers: {},
     }
   }
 
   triggerStart() {
-    this.setState({ stage: "game", currentCard: 0, cardAnswers: new Array(this.props.n) })
+    this.setState({ stage: "game", currentCard: 0, cardAnswers: {} });
   }
 
   triggerReset() {
-    this.setState({ stage: "intro" })
+    this.setState({ stage: "intro" });
   }
 
   registerAnswer(numberPresent) {
-    var nextCardAnswers = this.state.cardAnswers.slice();
+    var nextCardAnswers = Object.assign({}, this.state.cardAnswers);
     nextCardAnswers[this.state.currentCard] = numberPresent;
 
-    var nextCurrentCard = this.state.currentCard + 1;
+    var nextCurrentCard = null;
 
-    if (nextCurrentCard >= this.props.n) {
+    if (Object.keys(nextCardAnswers).length < this.props.n) {
+      if (this.props.randomCardOrder === true) {
+        var allCards = [...Array(this.props.n).keys()];
+        var answeredCards = Object.keys(nextCardAnswers).map((stringValue) => Number(stringValue));
+        var missingCards = allCards.filter((value) => !answeredCards.includes(value));
+        var r = Math.floor(Math.random() * missingCards.length);
+        nextCurrentCard = missingCards[r];
+      } else {
+        nextCurrentCard = this.state.currentCard + 1;
+      }
+    }
+
+    if (nextCurrentCard === null) {
       this.setState({ stage: "outro", currentCard: null, cardAnswers: nextCardAnswers });
     } else {
       this.setState({ stage: "game", currentCard: nextCurrentCard, cardAnswers: nextCardAnswers });
@@ -50,9 +62,15 @@ class Game extends Component {
   }
 
   calculateMagicNumber() {
-    return this.state.cardAnswers.reduce(
-      (acc, numberPresent, index) => acc + (numberPresent === true ? (1 << index) : 0)
-    )
+    var magicNumber = 0;
+
+    for (var cardIndex in this.state.cardAnswers) {
+      if (this.state.cardAnswers[cardIndex] === true) {
+        magicNumber += 1 << cardIndex;
+      }
+    }
+
+    return magicNumber;
   }
 
   render() {
