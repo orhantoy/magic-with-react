@@ -1,21 +1,21 @@
-function numbersForCard(index) {
+function numbersForCard(nMax, index) {
   const bitMask = 1 << index;
   var numbers = []
 
-  for (var i = 1; i <= 60; i++) {
+  for (var i = 1; i <= nMax; i++) {
     var maskedNumber = i | bitMask;
     numbers.push(maskedNumber);
   }
 
   var uniqueNumbers = [...new Set(numbers)];
   uniqueNumbers.sort((a, b) => a - b);
-  uniqueNumbers = uniqueNumbers.filter((n) => n <= 60);
+  uniqueNumbers = uniqueNumbers.filter((n) => n <= nMax);
 
   return uniqueNumbers;
 }
 
-function numbersTableForCard(index) {
-  var numbers = numbersForCard(index);
+function numbersTableForCard(nMax, index) {
+  var numbers = numbersForCard(nMax, index);
   var table = [];
   const nColumns = 6;
 
