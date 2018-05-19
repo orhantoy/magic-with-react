@@ -21,8 +21,9 @@ function numbersTableForCard(index) {
 
   while (numbers.length > 0) {
     var row = numbers.splice(0, nColumns);
+    var nPad = nColumns - row.length;
 
-    for (var i = 0; i < nColumns - row.length; i++) {
+    for (var i = 0; i < nPad; i++) {
       row.push(null);
     }
 
