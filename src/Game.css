@@ -98,9 +98,7 @@ p.reset {
   margin: 40px 0;
 }
 
-p.reset a,
-p.reset a:link,
-p.reset a:visited {
+p.reset button {
   color: #888;
 }
 
