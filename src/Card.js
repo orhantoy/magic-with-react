@@ -32,7 +32,7 @@ class Card extends Component {
         </div>
 
         <p className="reset">
-          <button onClick={this.props.onClickReset}>I want to start over</button>
+          <button className="as-link" onClick={this.props.onClickReset}>I want to start over</button>
         </p>
       </div>
     )

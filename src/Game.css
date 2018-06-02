@@ -28,7 +28,7 @@ form.inline {
   display: inline-block;
 }
 
-button.start {
+button.as-link {
   background: none;
   border: none;
   color: blue;
@@ -38,7 +38,7 @@ button.start {
   margin: 0;
 }
 
-button.start:hover {
+button.as-link:hover {
   text-decoration: underline;
 }
 

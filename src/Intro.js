@@ -12,7 +12,7 @@ function Intro(props) {
       </p>
 
       <div>
-        Ready? <button type="button" className="start" onClick={props.onClickStart}>{"Yes, let's go!"}</button>
+        Ready? <button type="button" className="as-link" onClick={props.onClickStart}>{"Yes, let's go!"}</button>
       </div>
     </div>
   );

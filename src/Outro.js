@@ -12,7 +12,7 @@ function Outro(props) {
       </p>
 
       <p>
-        <button onClick={props.onClickReset}>Let me try again!</button>
+        <button className="as-link" onClick={props.onClickReset}>Let me try again!</button>
       </p>
     </div>
   );
