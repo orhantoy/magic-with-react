@@ -1,0 +1,113 @@
+body {
+  background: #eee;
+  margin: 40px 20px 80px;
+  padding: 0;
+}
+
+body,
+button {
+  font-family: sans-serif;
+}
+
+a,
+a:link,
+a:visited {
+  color: blue;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+p.lead {
+  font-size: 1.5em;
+}
+
+form.inline {
+  display: inline-block;
+}
+
+button.as-link {
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+button.as-link:hover {
+  text-decoration: underline;
+}
+
+p.card-question {
+  text-align: center;
+}
+
+table.card {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table.card tbody td {
+  background: #fff;
+  border: 1px solid #aaa;
+  font-size: 24px;
+  line-height: 32px;
+  padding: 10px;
+  text-align: center;
+}
+
+.choices {
+  margin: 20px 0;
+  overflow: auto;
+}
+
+.choices button.choice {
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+  line-height: 42px;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 4px;
+  border: solid 1px #bbb;
+}
+
+.choices button.choice:hover {
+  border-color: #666;
+}
+
+.choices button.choice.yes {
+  color: green;
+  float: left;
+}
+
+.choices button.choice.no {
+  color: red;
+  float: right;
+}
+
+p.reset {
+  border-top: 1px solid #ddd;
+  font-size: 12px;
+  padding-top: 20px;
+  margin: 40px 0;
+}
+
+p.reset button {
+  color: #888;
+}
+
+@media only screen and (max-width: 600px) {
+  .choices button.choice {
+    box-sizing: border-box;
+    display: block;
+    float: none;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
