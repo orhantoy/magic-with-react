@@ -40,39 +40,3 @@ class Card extends Component {
 }
 
 export default Card;
-
-/*
-<p class="lead card-question">Is your number here?</p>
-
-        <form method="post">
-          <% if next_card_index %>
-            <input type="hidden" name="card_index" value="<%= next_card_index %>">
-          <% end %>
-
-          <% game.answers.each do |answer| %>
-            <input type="hidden" name="answers[<%= answer[:index] %>]" value="<%= answer[:value] %>">
-          <% end %>
-
-          <div>
-            <table class="card">
-              <tbody>
-                <% game.numbers_table.each do |row| %>
-                  <tr>
-                    <% row.each do |number| %>
-                      <td><%= number %></td>
-                    <% end %>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="choices">
-            <button type="submit" name="answers[<%= game.current_card_index %>]" value="1" class="choice yes">👍 My number is there</button>
-            <button type="submit" name="answers[<%= game.current_card_index %>]" value="0" class="choice no">My number is not there 👎</button>
-          </div>
-        </form>
-
-        <p class="reset">
-          <a href="<%= h root_url %>">I want to start over</a>
-        </p>*/
