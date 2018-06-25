@@ -7,20 +7,20 @@ class Card extends Component {
         <p className="lead card-question">Is your number here?</p>
 
         <div>
-            <table className="card">
-              <tbody>
-                {this.props.numbersTable.map(function(row, rowIndex) {
-                  return (
-                    <tr key={"row-" + rowIndex}>
-                      {row.map(function(number, cellIndex) {
-                        return <td key={"row-" + rowIndex + "-" + cellIndex }>{number}</td>
-                      })}
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </div>
+          <table className="card">
+            <tbody>
+              {this.props.numbersTable.map(function(row, rowIndex) {
+                return (
+                  <tr key={"row-" + rowIndex}>
+                    {row.map(function(number, cellIndex) {
+                      return <td key={"row-" + rowIndex + "-" + cellIndex }>{number}</td>
+                    })}
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
 
         <div className="choices">
           <button onClick={this.props.onClickNumberPresent} className="choice yes">
